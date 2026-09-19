@@ -1,0 +1,22 @@
+{
+  "name": "travel-india-tour",
+  "version": "1.0.0",
+  "description": "Travel India - Mana Yatri inspired open mobility and tour booking platform",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "serve": "node server.js"
+  },
+  "keywords": [
+    "travel-india",
+    "mana-yatri",
+    "namma-yatri",
+    "ondc",
+    "open-mobility",
+    "tour-booking"
+  ],
+  "author": "Travel India",
+  "license": "ISC"
+}
+

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="favAmber" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFC107" />
+      <stop offset="100%" stop-color="#FF9800" />
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="#0B1E36" />
+  <circle cx="32" cy="32" r="28" fill="none" stroke="#FF9933" stroke-width="2" stroke-dasharray="4 2" />
+  <!-- Auto Silhouette -->
+  <path d="M 18 28 Q 26 18, 44 18 L 50 24 Q 52 26, 50 30 L 18 30 Z" fill="url(#favAmber)" />
+  <polygon points="42,24 48,24 46,30 40,30" fill="#E0F2FE" />
+  <path d="M 16 30 L 49 30 L 47 42 Q 45 45, 41 45 L 21 45 Q 17 45, 16 41 Z" fill="#065F46" />
+  <rect x="16" y="32" width="33" height="3" fill="#34D399" />
+  <!-- Wheels -->
+  <circle cx="23" cy="45" r="7" fill="#1E293B" stroke="#FFF" stroke-width="1.5" />
+  <circle cx="23" cy="45" r="3" fill="#FFC107" />
+  <circle cx="44" cy="45" r="6" fill="#1E293B" stroke="#FFF" stroke-width="1.5" />
+  <circle cx="44" cy="45" r="2.5" fill="#FFC107" />
+</svg>
+

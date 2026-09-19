@@ -1,0 +1,1638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Travel India | Zero Commission Bharat Open Mobility &amp; Tours</title>
+  <meta name="description" content="Travel India is an open mobility platform inspired by Mana Yatri & Namma Yatri. Book authentic auto rickshaw tours, city day trips, and heritage cab journeys directly with verified local drivers. 100% direct driver payment." />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <!-- Google Fonts: Inter & Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet" />
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ========================================================================
+       TOP ANNOUNCEMENT BAR (Mana Yatri / ONDC Open Network)
+       ======================================================================== -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <span class="top-bar-badge">
+          <span style="font-size: 0.9rem;">🇮🇳</span> BHARAT OPEN MOBILITY
+        </span>
+        <span style="font-weight: 500;" data-i18n="top_announcement">
+          Zero Commission to Drivers • 100% Direct Driver Payments • Powered by ONDC Protocol
+        </span>
+      </div>
+      <div class="top-bar-links">
+        <a href="#contact">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+          <span data-i18n="top_helpline">24x7 SOS Support: 1800-BHARAT</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       STICKY NAVBAR
+       ======================================================================== -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="#" class="brand-logo-wrap">
+        <img src="assets/logo.svg" alt="Travel India Logo" class="brand-logo-img" />
+      </a>
+
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="#packages-catalog" class="nav-link active" data-i18n="nav_packages">All Packages</a></li>
+          <li><a href="#state-trip-planner" class="nav-link" data-i18n="nav_planner">State Trip Planner</a></li>
+          <li><a href="#tourist-gallery" class="nav-link" data-i18n="nav_gallery">Incredible India</a></li>
+          <li class="nav-dropdown-item">
+            <a href="javascript:void(0)" class="nav-link nav-dropdown-toggle">
+              <span data-i18n="nav_more">Explore More ▾</span>
+            </a>
+            <div class="nav-dropdown-box">
+              <a href="#about-agency" class="dropdown-link">
+                <span class="dropdown-link-icon">🏛️</span>
+                <div>
+                  <div class="dropdown-link-title" data-i18n="nav_agency">About Agency</div>
+                  <div class="dropdown-link-sub">Accreditations &amp; Branch Hubs</div>
+                </div>
+              </a>
+              <a href="#atoz-planner" class="dropdown-link">
+                <span class="dropdown-link-icon">🎒</span>
+                <div>
+                  <div class="dropdown-link-title" data-i18n="nav_atoz">A-to-Z Trip Planning</div>
+                  <div class="dropdown-link-sub">End-to-End Custom Itinerary</div>
+                </div>
+              </a>
+              <a href="#ethos" class="dropdown-link">
+                <span class="dropdown-link-icon">🛡️</span>
+                <div>
+                  <div class="dropdown-link-title" data-i18n="nav_ethos">0% Commission Model</div>
+                  <div class="dropdown-link-sub">100% Direct Driver Payments</div>
+                </div>
+              </a>
+              <a href="#policies-terms" class="dropdown-link">
+                <span class="dropdown-link-icon">📜</span>
+                <div>
+                  <div class="dropdown-link-title" data-i18n="nav_policies">Policies &amp; Terms</div>
+                  <div class="dropdown-link-sub">Payment, Refunds &amp; Privacy</div>
+                </div>
+              </a>
+              <a href="#contact" class="dropdown-link">
+                <span class="dropdown-link-icon">📞</span>
+                <div>
+                  <div class="dropdown-link-title" data-i18n="nav_contact">Contact Us</div>
+                  <div class="dropdown-link-sub">24x7 Helplines &amp; Social Hub</div>
+                </div>
+              </a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Language Switcher in Navbar -->
+        <div class="lang-switcher-wrap">
+          <select id="language-switcher" class="lang-select" onchange="App.changeLanguage(this.value)">
+            <option value="en">🇬🇧 English</option>
+            <option value="kn">🟡🔴 ಕನ್ನಡ</option>
+            <option value="hi">🇮🇳 हिन्दी</option>
+            <option value="te">🏛️ తెలుగు</option>
+          </select>
+        </div>
+
+        <button id="btn-open-bookings" class="btn-my-bookings" title="View your confirmed bookings">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
+          <span data-i18n="nav_my_bookings">My Bookings</span>
+          <span id="nav-booking-count" class="booking-badge-count" style="display: none;">0</span>
+        </button>
+
+        <button class="btn-partner" onclick="App.showToast('🚀 Sarathi Driver registration open! Connect directly with travelers.')">
+          <span data-i18n="nav_drive_with_us">Drive with Us</span>
+        </button>
+
+        <button class="mobile-nav-toggle" onclick="document.querySelector('.nav-menu').style.display = document.querySelector('.nav-menu').style.display === 'flex' ? 'none' : 'flex'">
+          ☰
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       HERO SECTION & INTERACTIVE LOCATION SELECTOR
+       ======================================================================== -->
+  <section class="hero-section">
+    <div class="hero-bg-accent"></div>
+    <div class="container">
+      <div class="hero-grid">
+        <!-- Hero Left Pitch -->
+        <div>
+          <div class="hero-pill">
+            <span>✨</span> <span data-i18n="hero_pill">Inspired by Mana Yatri &amp; Namma Yatri</span>
+          </div>
+          <h1 class="hero-title" data-i18n="hero_title">
+            Travel India with Pride. Zero Commission. 100% Direct.
+          </h1>
+          <p class="hero-subtitle" data-i18n="hero_subtitle">
+            Experience the real India through local auto rickshaw trails, royal palace cab safaris, and authentic cultural journeys. Book directly with local Sarathi drivers—no middlemen, no 30% corporate cuts.
+          </p>
+
+          <div class="hero-usps">
+            <div class="hero-usp-item">
+              <span class="hero-usp-icon">✓</span>
+              <span data-i18n="hero_usp_1">100% Fare to Driver via UPI</span>
+            </div>
+            <div class="hero-usp-item">
+              <span class="hero-usp-icon">✓</span>
+              <span data-i18n="hero_usp_2">Police-Verified Local Guides</span>
+            </div>
+            <div class="hero-usp-item">
+              <span class="hero-usp-icon">✓</span>
+              <span data-i18n="hero_usp_3">No Surge Pricing Guarantee</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Right: Interactive Search & Location Selector -->
+        <div>
+          <div class="hero-search-card">
+            <div class="search-card-header">
+              <div class="search-card-title">
+                <span style="font-size: 1.3rem;">🛺</span>
+                <span data-i18n="hero_card_title">Find Tour Packages</span>
+              </div>
+              <span class="search-card-tag">ONDC Mobility</span>
+            </div>
+
+            <!-- Location Selector Dropdown -->
+            <div class="search-form-group">
+              <label for="hero-location" class="search-label" data-i18n="hero_lbl_location">1. Select Destination / City</label>
+              <select id="hero-location" class="search-select">
+                <!-- Dynamically populated from TRAVEL_DATA -->
+              </select>
+            </div>
+
+            <!-- Tour Type & Category -->
+            <div class="search-row-2">
+              <div class="search-form-group">
+                <label for="hero-category" class="search-label" data-i18n="hero_lbl_exp">2. Experience Type</label>
+                <select id="hero-category" class="search-select">
+                  <option value="all">All Experiences</option>
+                  <option value="heritage">Heritage &amp; Forts</option>
+                  <option value="city-tour">City Day Trails</option>
+                  <option value="nature">Nature &amp; Hills</option>
+                  <option value="spiritual">Spiritual Yatras</option>
+                  <option value="outstation">Outstation Safaris</option>
+                </select>
+              </div>
+
+              <div class="search-form-group">
+                <label for="hero-date" class="search-label" data-i18n="hero_lbl_date">3. Travel Date</label>
+                <input type="date" id="hero-date" class="search-input" />
+              </div>
+            </div>
+
+            <!-- Travelers / Group Size & Search CTA -->
+            <div class="search-form-group">
+              <label class="search-label" data-i18n="hero_lbl_vehicle">4. Travelers / Group Size</label>
+              <select id="hero-group-size" class="search-select">
+                <option value="all">Any Group Size</option>
+                <option value="1">Solo Traveler (1 Guest)</option>
+                <option value="2" selected>Couple / Pair (2 Guests)</option>
+                <option value="4">Small Family / Friends (3-4 Guests)</option>
+                <option value="6">Large Group (5-6+ Guests)</option>
+              </select>
+            </div>
+
+            <button id="btn-hero-search" class="btn-search-packages">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <span data-i18n="hero_btn_search">Search Tours &amp; Check Packages</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       LIVE OPEN DATA METRICS STRIP (Mana Yatri Signature Feature)
+       ======================================================================== -->
+  <section id="metrics" class="metrics-section">
+    <div class="container">
+      <div class="metrics-strip">
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <div class="metric-icon">🛺</div>
+            <div class="metric-number">54.2 Lakh+</div>
+            <div class="metric-label" data-i18n="metrics_trips">Completed Tours &amp; Rides</div>
+            <div class="metric-sub">Across 28 Indian Cities</div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-icon">₹</div>
+            <div class="metric-number highlight-green">₹218.4 Cr+</div>
+            <div class="metric-label" data-i18n="metrics_earnings">100% Direct Driver Earnings</div>
+            <div class="metric-sub">Zero commission deducted</div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-icon">🛡️</div>
+            <div class="metric-number">1,68,400+</div>
+            <div class="metric-label" data-i18n="metrics_drivers">Registered Sarathis</div>
+            <div class="metric-sub">Police &amp; Community Verified</div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-icon">💰</div>
+            <div class="metric-number highlight-green">₹47.9 Cr+</div>
+            <div class="metric-label" data-i18n="metrics_savings">Rider Savings</div>
+            <div class="metric-sub">Vs. Corporate Aggregator Apps</div>
+          </div>
+        </div>
+
+        <!-- Live Real-Time Ticker -->
+        <div class="live-ticker-wrap">
+          <span class="live-ticker-badge">Live Pulse</span>
+          <div id="live-ticker-text" class="live-ticker-content">
+            <strong>Sneha R.</strong> in <strong>Hyderabad</strong> just booked <em>"Charminar &amp; Nizami Heritage Rickshaw"</em> (₹899) • Just now
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       1. ABOUT TRAVEL INDIA AGENCY & ACCREDITATIONS
+       ======================================================================== -->
+  <section id="about-agency" class="agency-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag" data-i18n="agency_tag">Government Recognized &amp; ONDC Partner</span>
+        <h2 class="section-title" data-i18n="agency_title">About Travel India Tourism Agency</h2>
+        <p class="section-desc" data-i18n="agency_desc">
+          Bharat's premier open mobility and sustainable tourism network. Built with driver unions and state tourism boards to eliminate middleman cuts and deliver authentic local experiences.
+        </p>
+      </div>
+
+      <!-- Agency Profile & Mission Card -->
+      <div class="agency-overview-card">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 16px;">
+          <div>
+            <span class="agency-reg-badge">
+              <span>🏛️</span> Reg No: <strong id="agency-reg-no">MOT-IND/2023/ONDC-88412</strong>
+            </span>
+            <h3 style="font-size: 1.55rem; font-weight: 900; color: var(--primary-dark); margin-bottom: 8px;">
+              Travel India National Mobility &amp; Tourism Bureau
+            </h3>
+            <p style="color: var(--primary-orange); font-weight: 700; font-size: 0.95rem; margin-bottom: 14px;">
+              100% Direct Driver Payments • Zero Middleman Commission • Regulated Standard Fares
+            </p>
+          </div>
+          <div style="background: #FFF; padding: 12px 18px; border-radius: var(--radius-md); border: 1.5px solid var(--border-color); text-align: right;">
+            <div style="font-size: 0.76rem; color: var(--text-muted); font-weight: 700;">24x7 TOURIST HELPDESK</div>
+            <div style="font-size: 1.25rem; font-weight: 900; color: var(--accent-green);">1800-242-728</div>
+            <div style="font-size: 0.74rem; color: var(--text-muted);">WhatsApp: +91 98490 12345</div>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 20px 0;">
+          <div style="background: #FFFFFF; padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+            <h4 style="font-size: 1.05rem; font-weight: 800; color: var(--primary-dark); margin-bottom: 6px;">
+              🎯 Our Mission &amp; Purpose
+            </h4>
+            <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.55;">
+              To empower over 500,000 native driver-sarathis across 100+ cities with 100% direct UPI earnings while giving domestic and international travelers safe, transparent, non-surge tourism transport.
+            </p>
+          </div>
+
+          <div style="background: #FFFFFF; padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+            <h4 style="font-size: 1.05rem; font-weight: 800; color: var(--primary-dark); margin-bottom: 6px;">
+              🏢 National Headquarters
+            </h4>
+            <p id="agency-hq-address" style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5;">
+              Travel India House, 4th Floor, Barakhamba Road, Connaught Place, New Delhi - 110001
+            </p>
+            <div id="agency-hq-hours" style="font-size: 0.8rem; color: var(--accent-green); font-weight: 700; margin-top: 6px;">
+              24 Hours / 7 Days (Operations &amp; Tourist Dispatch)
+            </div>
+          </div>
+        </div>
+
+        <!-- Accreditations Row -->
+        <div>
+          <span style="font-size: 0.8rem; font-weight: 800; color: var(--primary-dark); text-transform: uppercase; letter-spacing: 0.05em;">
+            Government &amp; Industry Accreditations:
+          </span>
+          <div class="agency-accreditations-row">
+            <span class="accred-pill">🇮🇳 Ministry of Tourism (MoT) Recognized</span>
+            <span class="accred-pill">🌐 ONDC Certified Open Mobility Network</span>
+            <span class="accred-pill">🤝 IATO Member (Tour Operators Association)</span>
+            <span class="accred-pill">🛡️ ISO 9001:2015 Safety Certified</span>
+            <span class="accred-pill">🌱 Zero-Carbon Green Bharat Partner</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Regional Branch Offices Directory -->
+      <div>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+          <h3 style="font-size: 1.35rem; font-weight: 900; color: var(--primary-dark);">
+            📍 Regional Branch Offices &amp; Dispatch Hubs
+          </h3>
+          <span style="font-size: 0.84rem; color: var(--accent-green); font-weight: 700;">
+            Serving 28 Cities Across India
+          </span>
+        </div>
+        <div id="agency-branches-grid" class="branches-grid">
+          <!-- Dynamically populated from data.js -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       2. INCREDIBLE INDIA TOURIST SPOTLIGHT SLIDE & INFINITE PHOTO MARQUEE
+       ======================================================================== -->
+  <section id="tourist-gallery" class="gallery-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag" data-i18n="gallery_tag">Visual Wonders of Bharat</span>
+        <h2 class="section-title" data-i18n="gallery_title">Incredible India Tourist Spotlight &amp; Photo Marquee</h2>
+        <p class="section-desc" data-i18n="gallery_desc">
+          Featured destination spotlight with clean essentials, accompanied by an infinite photo marquee showcasing all landmarks of Bharat.
+        </p>
+      </div>
+
+      <!-- Gallery Filter Pills -->
+      <div class="gallery-pills">
+        <button class="gallery-pill-btn active" data-cat="all" onclick="App.filterGallery('all')">All Attractions</button>
+        <button class="gallery-pill-btn" data-cat="heritage" onclick="App.filterGallery('heritage')">🏰 Royal Heritage &amp; Forts</button>
+        <button class="gallery-pill-btn" data-cat="nature" onclick="App.filterGallery('nature')">🌿 Nature, Hills &amp; Backwaters</button>
+        <button class="gallery-pill-btn" data-cat="spiritual" onclick="App.filterGallery('spiritual')">🕉️ Sacred Spiritual Ghats</button>
+      </div>
+
+      <!-- ====================================================================
+           A. FEATURED LOCATION SPOTLIGHT SLIDE (ONE SLIDE - LIMITED INFORMATION)
+           ==================================================================== -->
+      <div id="spotlight-slide-wrapper" class="spotlight-slide-wrapper">
+        <div id="spotlight-slide-card" class="spotlight-slide-card">
+          <!-- Rendered dynamically by JavaScript: App.renderSpotlightSlide() -->
+        </div>
+
+        <!-- Slide Controls (Prev / Next & Dots) -->
+        <div class="spotlight-controls-row">
+          <button class="spotlight-nav-btn" onclick="App.prevSpotlightSlide()" title="Previous Location">
+            ‹ Prev
+          </button>
+          <div id="spotlight-dots" class="spotlight-dots-container">
+            <!-- Indicator dots injected by JS -->
+          </div>
+          <button class="spotlight-nav-btn" onclick="App.nextSpotlightSlide()" title="Next Location">
+            Next ›
+          </button>
+        </div>
+      </div>
+
+      <!-- ====================================================================
+           B. INFINITE PHOTO MARQUEE OF ALL INDIA TOURIST PHOTOS
+           ==================================================================== -->
+      <div class="marquee-section-wrap">
+        <div class="marquee-header-bar">
+          <div class="marquee-title-wrap">
+            <span class="pulse-indicator"></span>
+            <span class="marquee-title">All Tourist Photos Marquee • Continuous Live Panorama</span>
+          </div>
+          <span class="marquee-hint">💡 Click any photo to spotlight &amp; book • Hover to pause</span>
+        </div>
+
+        <div class="marquee-container" id="tourist-marquee-container" onmouseenter="App.pauseMarquee()" onmouseleave="App.resumeMarquee()">
+          <div id="tourist-marquee-track" class="marquee-track">
+            <!-- Dynamically injected duplicated cards for seamless loop -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       3. STATE-WISE EVENT & TRIP PLANNER
+       ======================================================================== -->
+  <section id="state-trip-planner" class="state-planner-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag" style="background: rgba(255, 183, 3, 0.2); color: var(--primary-amber);" data-i18n="state_tag">
+          Custom Itinerary Planning
+        </span>
+        <h2 class="section-title" data-i18n="state_title">Plan Your Trip by Indian State</h2>
+        <p class="section-desc" data-i18n="state_desc">
+          Select any state across India to discover all available day safaris, multi-day packages, major travel hubs, and direct driver prices.
+        </p>
+      </div>
+
+      <!-- State Selection Horizontal Cards -->
+      <div id="state-selector-tabs" class="state-cards-scroll">
+        <!-- Rendered by JavaScript -->
+      </div>
+
+      <!-- Active State Banner -->
+      <div id="state-active-banner">
+        <!-- Injected by JavaScript -->
+      </div>
+
+      <!-- State Trips List Grid -->
+      <div id="state-trips-list" class="state-trips-grid">
+        <!-- Rendered by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       4. A TO Z COMPLETE TRIP PLANNER & END-TO-END MANAGEMENT
+       ======================================================================== -->
+  <section id="atoz-planner" class="atoz-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag" data-i18n="atoz_tag">End-to-End Travel Management</span>
+        <h2 class="section-title" data-i18n="atoz_title">We Are Your A to Z Trip Planner</h2>
+        <p class="section-desc" data-i18n="atoz_desc">
+          From the moment you land until you return home, we manage every fine detail so you travel stress-free across Incredible India.
+        </p>
+      </div>
+
+      <!-- A to Z 8 Services Grid -->
+      <div id="atoz-services-grid" class="atoz-services-grid">
+        <!-- Rendered by JavaScript -->
+      </div>
+
+      <!-- Interactive A to Z Custom Trip Builder Card -->
+      <div id="atoz-trip-builder" class="atoz-builder-card">
+        <div class="builder-header">
+          <div>
+            <span class="badge" style="background: rgba(251, 133, 0, 0.15); color: var(--primary-orange); font-weight: 800; padding: 4px 10px; border-radius: 20px; font-size: 0.78rem;">
+              Interactive Trip Calculator
+            </span>
+            <h3 style="font-size: 1.4rem; font-weight: 900; color: var(--primary-dark); margin-top: 6px;">
+              Design Your Complete A-to-Z Custom Itinerary
+            </h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin: 0;">
+              Personalize every detail: Chauffeur vehicle, certified guide, fast-track VIP temple passes, and regional meal trails.
+            </p>
+          </div>
+          <div style="text-align: right;">
+            <span style="font-size: 0.78rem; color: #64748B; font-weight: 700;">Zero Middleman Platform Cut</span>
+            <div style="color: #059669; font-weight: 900; font-size: 1rem;">100% Direct Driver Fare</div>
+          </div>
+        </div>
+
+        <div class="builder-grid-inputs">
+          <div class="search-form-group">
+            <label for="builder-state" class="search-label">Choose State / Circuit</label>
+            <select id="builder-state" class="search-select">
+              <option value="hyderabad">Telangana (Nizam Forts & Pearls)</option>
+              <option value="rajasthan">Rajasthan (Royal Forts & Palaces)</option>
+              <option value="kerala">Kerala (God's Own Country)</option>
+              <option value="goa">Goa (Beaches & Portuguese Heritage)</option>
+              <option value="karnataka">Karnataka (Mysuru & Bengaluru)</option>
+              <option value="varanasi">Uttar Pradesh (Kashi Ghats & Ayodhya)</option>
+              <option value="himachal">Himachal Pradesh (Himalayan Valleys)</option>
+            </select>
+          </div>
+
+          <div class="search-form-group">
+            <label for="builder-duration" class="search-label">Trip Duration</label>
+            <select id="builder-duration" class="search-select">
+              <option value="1">1 Day Express Explorer</option>
+              <option value="2">2 Days Weekend Immersion</option>
+              <option value="3" selected>3 Days Comprehensive Circuit</option>
+              <option value="4">4 Days Grand Expedition</option>
+              <option value="5">5 Days Royal Odyssey</option>
+            </select>
+          </div>
+
+          <div class="search-form-group">
+            <label for="builder-vehicle" class="search-label">Group Size &amp; Comfort</label>
+            <select id="builder-vehicle" class="search-select">
+              <option value="sedan">Duo / Small Group (1 to 4 Guests Included)</option>
+              <option value="suv">Family Expedition (5 to 7 Guests Included)</option>
+              <option value="auto">Heritage City Circuit (1 to 3 Guests)</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="font-size: 0.9rem; font-weight: 800; color: var(--primary-dark); margin-bottom: 12px;">
+          Select Your A-to-Z Service Inclusions:
+        </div>
+
+        <div class="builder-checkbox-grid">
+          <label class="builder-check-item">
+            <input type="checkbox" id="inc-guide" checked />
+            <span>🗣️ Multilingual Sarathi Guide (State Certified)</span>
+          </label>
+          <label class="builder-check-item">
+            <input type="checkbox" id="inc-passes" checked />
+            <span>🎟️ Fast-Track Monument Entry &amp; VIP Darshan Passes</span>
+          </label>
+          <label class="builder-check-item">
+            <input type="checkbox" id="inc-meals" checked />
+            <span>🍱 Authentic Regional Breakfast &amp; Culinary Food Trails</span>
+          </label>
+          <label class="builder-check-item">
+            <input type="checkbox" id="inc-stay" checked />
+            <span>🏰 Boutique Heritage Hotel / Houseboat Stay</span>
+          </label>
+        </div>
+
+        <!-- Breakdown Details -->
+        <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: var(--radius-md); padding: 16px; margin-bottom: 24px;">
+          <div style="font-size: 0.8rem; font-weight: 800; color: #64748B; text-transform: uppercase; margin-bottom: 8px;">
+            Estimated Fare Breakdown
+          </div>
+          <ul id="builder-breakdown-list" style="list-style: none; padding: 0; margin: 0; font-size: 0.86rem;">
+            <!-- Rendered by JavaScript -->
+          </ul>
+        </div>
+
+        <!-- Quote & Booking Action Box -->
+        <div class="builder-quote-box">
+          <div>
+            <div class="builder-price-label">Transparent Direct Total Fare</div>
+            <div id="builder-est-price" class="builder-price-value">₹9,447</div>
+            <div id="builder-est-saving" style="font-size: 0.82rem; color: #34D399; font-weight: 700; margin-top: 4px;">
+              Save ₹3,590 with Travel India 0% Commission
+            </div>
+          </div>
+          <div style="display: flex; gap: 12px; align-items: center;">
+            <button type="button" class="btn-primary" style="padding: 14px 28px; font-size: 1rem; font-weight: 800; cursor: pointer;" onclick="App.bookAtoZCustomTrip()">
+              ⚡ Instant Book Custom A-to-Z Trip
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       DESTINATIONS & TOUR PACKAGES CATALOG
+       ======================================================================== -->
+  <section id="packages-catalog" class="section-main">
+    <div class="container">
+      <!-- Section Header -->
+      <div class="section-header">
+        <span class="section-tag" data-i18n="packages_tag">Curated India Tours</span>
+        <h2 class="section-title" data-i18n="packages_title">Select Your Location &amp; Choose Your Package</h2>
+        <p class="section-desc" data-i18n="packages_desc">
+          Transparent pricing directly payable to local drivers. Includes vehicle, fuel, parking, driver-guide allowance, and zero commission cuts.
+        </p>
+      </div>
+
+      <!-- Destination Filter Tabs (Horizontal Scroll) -->
+      <div id="destination-tabs" class="destination-tabs-scroll">
+        <!-- Rendered by JavaScript -->
+      </div>
+
+      <!-- Catalog Control Bar (Categories, Search, Sort) -->
+      <div class="catalog-filter-bar">
+        <div class="category-pills">
+          <button class="pill-btn active" data-category="all">All Packages</button>
+          <button class="pill-btn" data-category="heritage">🏰 Heritage &amp; Forts</button>
+          <button class="pill-btn" data-category="city-tour">🛺 City Day Trails</button>
+          <button class="pill-btn" data-category="nature">🌿 Nature &amp; Hills</button>
+          <button class="pill-btn" data-category="spiritual">🕉️ Spiritual Yatras</button>
+          <button class="pill-btn" data-category="outstation">🚗 Outstation</button>
+        </div>
+
+        <!-- Price Range Filter Bar -->
+        <div class="price-filter-row">
+          <span class="filter-label-tag">💰 Price Filter:</span>
+          <button class="price-pill-btn active" data-price="all" onclick="App.filterByPrice('all')">All Prices</button>
+          <button class="price-pill-btn" data-price="budget" onclick="App.filterByPrice('budget')">Budget (&lt; ₹1,000)</button>
+          <button class="price-pill-btn" data-price="mid" onclick="App.filterByPrice('mid')">Mid-Range (₹1,000 - ₹2,500)</button>
+          <button class="price-pill-btn" data-price="premium" onclick="App.filterByPrice('premium')">Premium (&gt; ₹2,500)</button>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 10px;">
+          <input type="text" id="catalog-search" class="search-input" placeholder="Search landmark, fort, city..." style="width: 240px; padding: 7px 14px; font-size: 0.85rem;" />
+
+          <div class="catalog-sort">
+            <span>Sort By:</span>
+            <select id="sort-select" class="sort-select">
+              <option value="recommended">Recommended</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="rating">Highest Rated</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Result Counter -->
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+        <span id="results-count" style="font-weight: 700; font-size: 0.95rem; color: #475569;">
+          Showing Packages
+        </span>
+        <span style="font-size: 0.82rem; color: #059669; font-weight: 700;">
+          ⚡ All prices include 100% direct driver payout &amp; taxes
+        </span>
+      </div>
+
+      <!-- Packages Grid -->
+      <div id="packages-grid" class="packages-grid">
+        <!-- Dynamically rendered by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       ETHOS: ZERO-COMMISSION COMPARISON (Mana Yatri Philosophy)
+       ======================================================================== -->
+  <section id="ethos" class="ethos-section">
+    <div class="container">
+      <div class="ethos-grid">
+        <!-- Left Philosophy Details -->
+        <div class="ethos-content">
+          <span class="section-tag" style="background: rgba(255, 183, 3, 0.2); color: var(--primary-amber);">
+            The Mana Yatri Philosophy
+          </span>
+          <h2 class="section-title">
+            Why We Charge <span style="color: var(--primary-amber);">Zero Commission</span>
+          </h2>
+          <p style="color: #CBD5E1; font-size: 1.05rem; line-height: 1.6; margin-top: 14px;">
+            Traditional travel booking apps extract 25% to 35% commission from hardworking drivers, while inflating fares for tourists through opaque algorithms. 
+            Travel India operates on the Open Network for Digital Commerce (ONDC)—connecting you directly with local drivers via UPI.
+          </p>
+
+          <div class="ethos-features">
+            <div class="ethos-card">
+              <div class="ethos-icon">⚡</div>
+              <h4 class="ethos-card-title">Instant UPI Settlement</h4>
+              <p class="ethos-card-desc">Your payment goes directly into the driver partner's bank account with zero middleman deductions.</p>
+            </div>
+
+            <div class="ethos-card">
+              <div class="ethos-icon">🤝</div>
+              <h4 class="ethos-card-title">Community Owned</h4>
+              <p class="ethos-card-desc">Built in collaboration with driver unions and city transport associations across Bharat.</p>
+            </div>
+
+            <div class="ethos-card">
+              <div class="ethos-icon">🛡️</div>
+              <h4 class="ethos-card-title">Transparent Pricing</h4>
+              <p class="ethos-card-desc">Upfront rates based on standardized state transport guidelines. No surprise surge charges.</p>
+            </div>
+
+            <div class="ethos-card">
+              <div class="ethos-icon">🇮🇳</div>
+              <h4 class="ethos-card-title">Incredible Local Stories</h4>
+              <p class="ethos-card-desc">Native drivers who grew up around these monuments and know every hidden lane and food stall.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Comparison Table & Driver Earnings Calculator -->
+        <div>
+          <div class="comparison-card">
+            <h3 style="font-size: 1.25rem; font-weight: 800; color: #0B192C;">
+              Travel India vs. Corporate Aggregators
+            </h3>
+
+            <table class="comparison-table">
+              <thead>
+                <tr>
+                  <th>Feature</th>
+                  <th class="col-travel-india">Travel India</th>
+                  <th class="col-corporate">Traditional Apps</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="feature-name">Driver Commission</td>
+                  <td class="col-travel-india">0% (Zero)</td>
+                  <td class="col-corporate">25% - 35%</td>
+                </tr>
+                <tr>
+                  <td class="feature-name">Payment Settlement</td>
+                  <td class="col-travel-india">Instant via UPI</td>
+                  <td class="col-corporate">Weekly / Delayed</td>
+                </tr>
+                <tr>
+                  <td class="feature-name">Hidden Middleman Fees</td>
+                  <td class="col-travel-india">₹0 Extra</td>
+                  <td class="col-corporate">₹150 - ₹500</td>
+                </tr>
+                <tr>
+                  <td class="feature-name">Driver Happiness &amp; Care</td>
+                  <td class="col-travel-india">⭐⭐⭐⭐⭐</td>
+                  <td class="col-corporate">⭐⭐</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <!-- Interactive Driver Extra Earnings Calculator -->
+            <div class="earnings-calc-box">
+              <div class="calc-title">
+                <span>📊</span> Driver Monthly Extra Earnings with 0% Commission
+              </div>
+              <div class="calc-slider-wrap">
+                <input type="range" id="driver-rides-slider" class="calc-slider" min="5" max="25" value="12" />
+                <div style="display: flex; justify-content: space-between; font-size: 0.78rem; color: #64748B; margin-top: 4px;">
+                  <span>5 rides/day</span>
+                  <strong id="driver-rides-count" style="color: var(--primary-orange);">12 Rides / Day</strong>
+                  <span>25 rides/day</span>
+                </div>
+              </div>
+              <div class="calc-result-row">
+                <div style="font-size: 0.84rem; color: #475569;">
+                  Extra Money Kept by Driver's Family:
+                </div>
+                <div id="driver-monthly-diff" class="calc-result-amount">
+                  + ₹26,208 / mo
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       DRIVER PARTNERS ("Sarathi Shrestha")
+       ======================================================================== -->
+  <section id="drivers" class="drivers-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Meet Our Sarathis</span>
+        <h2 class="section-title">Built with Drivers, for Travelers</h2>
+        <p class="section-desc">
+          When drivers earn 100% of their hard-earned fare, hospitality becomes heartfelt. Meet some of our top-rated city Sarathis.
+        </p>
+      </div>
+
+      <div id="drivers-grid" class="drivers-grid">
+        <!-- Rendered by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       SAFETY, SOS & ONDC PROTOCOL
+       ======================================================================== -->
+  <section id="safety" class="container">
+    <div class="safety-strip">
+      <div class="safety-grid">
+        <div class="safety-item">
+          <div class="safety-icon">🚨</div>
+          <div>
+            <h4 class="safety-title">Live 24x7 SOS &amp; Trip Share</h4>
+            <p class="safety-desc">Share your live tour GPS with family anytime. Instant one-tap SOS alerts our city police coordination desk.</p>
+          </div>
+        </div>
+
+        <div class="safety-item">
+          <div class="safety-icon">🪪</div>
+          <div>
+            <h4 class="safety-title">100% Police &amp; ID Verified</h4>
+            <p class="safety-desc">Every Sarathi driver is thoroughly background-verified with commercial badges, valid licenses, and clean records.</p>
+          </div>
+        </div>
+
+        <div class="safety-item">
+          <div class="safety-icon">🌐</div>
+          <div>
+            <h4 class="safety-title">ONDC Open Network Interoperability</h4>
+            <p class="safety-desc">Built on the Beckn open protocol, ensuring maximum driver freedom, fair data ownership, and zero platform monopolization.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       CONTACT US & TOURIST HELPDESK
+       ======================================================================== -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag" data-i18n="contact_tag">24x7 Tourist Support &amp; Bookings</span>
+        <h2 class="section-title" data-i18n="contact_title">Contact Travel India Agency</h2>
+        <p class="section-desc" data-i18n="contact_desc">
+          Have questions about your upcoming trip, custom state itineraries, or driver coordination? Our dedicated tourist helpline officers are available around the clock.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Contact Information Card -->
+        <div class="contact-card-box">
+          <h3 style="font-size: 1.3rem; font-weight: 800; color: var(--primary-dark); margin-bottom: 8px;">
+            Official Bureau Contact Information
+          </h3>
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5;">
+            Reach us directly via toll-free phone, WhatsApp desk, or visit our central national headquarters in New Delhi.
+          </p>
+
+          <div class="contact-methods-list">
+            <div class="contact-method-item">
+              <div class="contact-method-icon">📞</div>
+              <div>
+                <div style="font-size: 0.76rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Toll-Free National Helpline</div>
+                <div style="font-size: 1.15rem; font-weight: 900; color: var(--primary-orange);">1800-242-728 (1800-BHARAT)</div>
+                <div style="font-size: 0.78rem; color: var(--accent-green); font-weight: 600;">Available 24x7 in English, Hindi, Telugu, Kannada &amp; Tamil</div>
+              </div>
+            </div>
+
+            <div class="contact-method-item">
+              <div class="contact-method-icon">💬</div>
+              <div>
+                <div style="font-size: 0.76rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">WhatsApp Tourist Desk</div>
+                <div style="font-size: 1.05rem; font-weight: 800; color: var(--primary-dark);">+91 98490 12345</div>
+                <div style="font-size: 0.78rem; color: var(--text-muted);">Instant Sarathi coordination and live tour assistance</div>
+              </div>
+            </div>
+
+            <div class="contact-method-item">
+              <div class="contact-method-icon">✉️</div>
+              <div>
+                <div style="font-size: 0.76rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Official Email Inquiries</div>
+                <div style="font-size: 0.95rem; font-weight: 700; color: var(--primary-dark);">
+                  <a href="mailto:support@travelindia.org" style="color: var(--primary-orange);">support@travelindia.org</a> / 
+                  <a href="mailto:bookings@travelindia.org" style="color: var(--primary-orange);">bookings@travelindia.org</a>
+                </div>
+                <div style="font-size: 0.78rem; color: var(--text-muted);">Response guaranteed within 30 minutes</div>
+              </div>
+            </div>
+
+            <div class="contact-method-item">
+              <div class="contact-method-icon">🏢</div>
+              <div>
+                <div style="font-size: 0.76rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">National Central Bureau</div>
+                <div style="font-size: 0.92rem; font-weight: 700; color: var(--primary-dark);">
+                  Travel India House, 4th Floor, Barakhamba Road, Connaught Place, New Delhi - 110001
+                </div>
+                <div style="font-size: 0.78rem; color: var(--text-muted);">Govt MoT Reg: MOT-IND/2023/ONDC-88412</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Contact / Custom Inquiry Form -->
+        <div class="contact-card-box" style="background: #FFFFFF;">
+          <h3 style="font-size: 1.3rem; font-weight: 800; color: var(--primary-dark); margin-bottom: 8px;">
+            Send Inquiry / Request Custom State Tour
+          </h3>
+          <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 20px;">
+            Planning a special pilgrimage, family holiday, or corporate event in India? Tell us your requirements.
+          </p>
+
+          <form id="agency-inquiry-form" onsubmit="event.preventDefault(); App.showToast('✅ Inquiry submitted! An official Travel India coordinator will contact you shortly.'); document.getElementById('agency-inquiry-form').reset();">
+            <div class="search-form-group">
+              <label class="form-label">Your Full Name *</label>
+              <input type="text" class="form-control" required placeholder="e.g. Vikramaditya Sen" />
+            </div>
+
+            <div class="search-row-2">
+              <div class="search-form-group">
+                <label class="form-label">Mobile Number *</label>
+                <input type="tel" class="form-control" required placeholder="10-digit number" maxlength="10" />
+              </div>
+              <div class="search-form-group">
+                <label class="form-label">Email Address *</label>
+                <input type="email" class="form-control" required placeholder="name@domain.com" />
+              </div>
+            </div>
+
+            <div class="search-row-2">
+              <div class="search-form-group">
+                <label class="form-label">Destination State</label>
+                <select class="form-control">
+                  <option value="telangana">Telangana (Hyderabad / Warangal)</option>
+                  <option value="rajasthan">Rajasthan (Jaipur / Udaipur / Jodhpur)</option>
+                  <option value="kerala">Kerala (Kochi / Munnar / Alleppey)</option>
+                  <option value="goa">Goa (Coastal &amp; Heritage)</option>
+                  <option value="karnataka">Karnataka (Bengaluru / Mysore / Coorg)</option>
+                  <option value="uttar-pradesh">Uttar Pradesh (Agra / Varanasi / Ayodhya)</option>
+                  <option value="himachal">Himachal Pradesh (Manali / Shimla)</option>
+                </select>
+              </div>
+              <div class="search-form-group">
+                <label class="form-label">Approximate Guests</label>
+                <select class="form-control">
+                  <option value="1-3">1 - 3 (Auto / Cab)</option>
+                  <option value="4-6">4 - 6 (SUV)</option>
+                  <option value="7+">7+ (Group / Tempo)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="search-form-group">
+              <label class="form-label">Message / Specific Landmarks</label>
+              <textarea class="form-control" rows="3" placeholder="Describe dates, required stops, or special requests..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-search-packages" style="width: 100%; margin-top: 10px;">
+              Submit Inquiry to Agency Desk
+            </button>
+          </form>
+        </div>
+
+        <!-- Phone Directory of Regional Offices -->
+        <div class="phone-directory-box" style="grid-column: 1 / -1; margin-top: 24px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 12px;">
+            <div>
+              <h4 style="font-size: 1.15rem; font-weight: 800; color: var(--primary-dark); margin: 0;">
+                📞 Regional Office Phone Directory &amp; Direct Desks
+              </h4>
+              <p style="font-size: 0.82rem; color: var(--text-muted); margin: 2px 0 0 0;">
+                Direct landlines for state tourism coordination, emergency chauffeur dispatch &amp; local permit inquiries.
+              </p>
+            </div>
+            <span style="font-size: 0.78rem; background: #ECFDF5; color: #065F46; border: 1px solid #A7F3D0; padding: 4px 10px; border-radius: 20px; font-weight: 800;">
+              ● All lines active 24/7
+            </span>
+          </div>
+
+          <div class="phone-contacts-grid">
+            <div class="phone-card">
+              <div style="font-size: 0.74rem; font-weight: 800; color: #64748B; text-transform: uppercase;">National Central Bureau</div>
+              <div style="font-size: 0.95rem; font-weight: 800; color: var(--primary-dark); margin-top: 4px;">New Delhi HQ</div>
+              <div style="font-size: 0.85rem; font-weight: 800; color: var(--primary-orange); margin-top: 2px;">
+                <a href="tel:+911123418900" style="color: inherit; text-decoration: none;">+91 11 2341 8900</a>
+              </div>
+            </div>
+
+            <div class="phone-card">
+              <div style="font-size: 0.74rem; font-weight: 800; color: #64748B; text-transform: uppercase;">Telangana Command</div>
+              <div style="font-size: 0.95rem; font-weight: 800; color: var(--primary-dark); margin-top: 4px;">Hyderabad Desk</div>
+              <div style="font-size: 0.85rem; font-weight: 800; color: var(--primary-orange); margin-top: 2px;">
+                <a href="tel:+914048921100" style="color: inherit; text-decoration: none;">+91 40 4892 1100</a>
+              </div>
+            </div>
+
+            <div class="phone-card">
+              <div style="font-size: 0.74rem; font-weight: 800; color: #64748B; text-transform: uppercase;">Karnataka Operations</div>
+              <div style="font-size: 0.95rem; font-weight: 800; color: var(--primary-dark); margin-top: 4px;">Bengaluru Hub</div>
+              <div style="font-size: 0.85rem; font-weight: 800; color: var(--primary-orange); margin-top: 2px;">
+                <a href="tel:+918025214400" style="color: inherit; text-decoration: none;">+91 80 2521 4400</a>
+              </div>
+            </div>
+
+            <div class="phone-card">
+              <div style="font-size: 0.74rem; font-weight: 800; color: #64748B; text-transform: uppercase;">Rajasthan Heritage Cell</div>
+              <div style="font-size: 0.95rem; font-weight: 800; color: var(--primary-dark); margin-top: 4px;">Jaipur Desk</div>
+              <div style="font-size: 0.85rem; font-weight: 800; color: var(--primary-orange); margin-top: 2px;">
+                <a href="tel:+911412378899" style="color: inherit; text-decoration: none;">+91 141 237 8899</a>
+              </div>
+            </div>
+
+            <div class="phone-card">
+              <div style="font-size: 0.74rem; font-weight: 800; color: #64748B; text-transform: uppercase;">Kerala Coastal Directorate</div>
+              <div style="font-size: 0.95rem; font-weight: 800; color: var(--primary-dark); margin-top: 4px;">Kochi Desk</div>
+              <div style="font-size: 0.85rem; font-weight: 800; color: var(--primary-orange); margin-top: 2px;">
+                <a href="tel:+914842396700" style="color: inherit; text-decoration: none;">+91 484 239 6700</a>
+              </div>
+            </div>
+
+            <div class="phone-card">
+              <div style="font-size: 0.74rem; font-weight: 800; color: #64748B; text-transform: uppercase;">Goa Transit Desk</div>
+              <div style="font-size: 0.95rem; font-weight: 800; color: var(--primary-dark); margin-top: 4px;">Panaji Desk</div>
+              <div style="font-size: 0.85rem; font-weight: 800; color: var(--primary-orange); margin-top: 2px;">
+                <a href="tel:+918322421200" style="color: inherit; text-decoration: none;">+91 832 242 1200</a>
+              </div>
+            </div>
+
+            <div class="phone-card">
+              <div style="font-size: 0.74rem; font-weight: 800; color: #64748B; text-transform: uppercase;">Kashi Seva Kendra</div>
+              <div style="font-size: 0.95rem; font-weight: 800; color: var(--primary-dark); margin-top: 4px;">Varanasi Desk</div>
+              <div style="font-size: 0.85rem; font-weight: 800; color: var(--primary-orange); margin-top: 2px;">
+                <a href="tel:+915422405588" style="color: inherit; text-decoration: none;">+91 542 240 5588</a>
+              </div>
+            </div>
+
+            <div class="phone-card" style="background: #FFF7ED; border-color: #FED7AA;">
+              <div style="font-size: 0.74rem; font-weight: 800; color: #C2410C; text-transform: uppercase;">National SOS Helpline</div>
+              <div style="font-size: 0.95rem; font-weight: 800; color: #9A3412; margin-top: 4px;">Toll-Free 24x7</div>
+              <div style="font-size: 0.85rem; font-weight: 900; color: #EA580C; margin-top: 2px;">
+                <a href="tel:1800242728" style="color: inherit; text-decoration: none;">1800-242-728</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Official Social Media & Community Channels -->
+        <div class="social-media-wrap" style="grid-column: 1 / -1; margin-top: 24px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+            <div>
+              <span class="top-bar-badge" style="background: rgba(251, 133, 0, 0.25); color: var(--primary-amber);">
+                Official Community Hub
+              </span>
+              <h4 style="font-size: 1.25rem; font-weight: 800; color: #FFFFFF; margin: 6px 0 2px 0;">
+                Connect with Travel India on Social Media
+              </h4>
+              <p style="font-size: 0.82rem; color: #94A3B8; margin: 0;">
+                Follow real traveler journeys, daily Sarathi stories, road conditions, and cultural photo updates across India.
+              </p>
+            </div>
+            <span style="font-size: 0.8rem; color: #34D399; font-weight: 700;">
+              ✨ 1,000,000+ Traveler Community
+            </span>
+          </div>
+
+          <div class="social-media-grid" id="social-media-grid">
+            <!-- Dynamically populated from TRAVEL_DATA.socialMedia -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       POLICIES, PAYMENT & CANCELLATION TERMS, PRIVACY & CONDITIONS
+       ======================================================================== -->
+  <section id="policies-terms" class="policy-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Transparency &amp; Legal Framework</span>
+        <h2 class="section-title">Payment, Cancellation, Terms &amp; Privacy Policies</h2>
+        <p class="section-desc">
+          Rooted in the open mobility ethos of Mana Yatri. Full transparency, 100% direct driver payments, fair cancellation terms, and uncompromising data privacy.
+        </p>
+      </div>
+
+      <!-- Policy Tabs -->
+      <div class="policy-tabs-bar">
+        <button class="policy-tab-btn active" data-policy="payment" onclick="App.switchPolicyTab('payment')">
+          💳 Payment Terms
+        </button>
+        <button class="policy-tab-btn" data-policy="cancellation" onclick="App.switchPolicyTab('cancellation')">
+          🔄 Cancellation &amp; Refund Policy
+        </button>
+        <button class="policy-tab-btn" data-policy="terms" onclick="App.switchPolicyTab('terms')">
+          📜 Terms &amp; Conditions
+        </button>
+        <button class="policy-tab-btn" data-policy="privacy" onclick="App.switchPolicyTab('privacy')">
+          🔒 Privacy &amp; Data Policy
+        </button>
+      </div>
+
+      <!-- Active Policy Content Card -->
+      <div id="policy-content-area" class="policy-content-card">
+        <!-- Injected dynamically by App.renderPolicies() -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       FOOTER
+       ======================================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/logo.svg" alt="Travel India" style="height: 48px; width: auto;" />
+          <p>
+            Travel India is Bharat's premier open mobility and community tour platform. Powered by the zero-commission philosophy of Mana Yatri and Namma Yatri, connecting travelers directly to verified auto and cab drivers.
+          </p>
+          <div style="display: flex; gap: 10px; margin-top: 16px;">
+            <span class="top-bar-badge">ONDC Compliant</span>
+            <span class="top-bar-badge">Beckn Protocol</span>
+            <span class="top-bar-badge">100% Direct UPI</span>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>Popular Destinations</h5>
+          <ul class="footer-links">
+            <li><a href="javascript:void(0)" onclick="App.selectLocation('hyderabad'); document.getElementById('packages-catalog').scrollIntoView({behavior: 'smooth'});">Hyderabad Heritage Tours</a></li>
+            <li><a href="javascript:void(0)" onclick="App.selectLocation('jaipur'); document.getElementById('packages-catalog').scrollIntoView({behavior: 'smooth'});">Jaipur Royal Forts Safari</a></li>
+            <li><a href="javascript:void(0)" onclick="App.selectLocation('goa'); document.getElementById('packages-catalog').scrollIntoView({behavior: 'smooth'});">Goa Coastal &amp; Spice Trails</a></li>
+            <li><a href="javascript:void(0)" onclick="App.selectLocation('bengaluru'); document.getElementById('packages-catalog').scrollIntoView({behavior: 'smooth'});">Bengaluru Nandi Sunrise</a></li>
+            <li><a href="javascript:void(0)" onclick="App.selectLocation('kerala'); document.getElementById('packages-catalog').scrollIntoView({behavior: 'smooth'});">Kerala Backwaters &amp; Munnar</a></li>
+            <li><a href="javascript:void(0)" onclick="App.selectLocation('varanasi'); document.getElementById('packages-catalog').scrollIntoView({behavior: 'smooth'});">Varanasi Kashi Ghats Yatra</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Driver Welfare</h5>
+          <ul class="footer-links">
+            <li><a href="javascript:void(0)" onclick="App.showToast('Driver onboarding centers available in 28 cities!')">Join as Auto Sarathi</a></li>
+            <li><a href="javascript:void(0)" onclick="App.showToast('Cab driver partner desk open 24x7.')">Join as Cab Chauffeur</a></li>
+            <li><a href="javascript:void(0)">Zero Commission Charter</a></li>
+            <li><a href="javascript:void(0)">Driver Medical Insurance</a></li>
+            <li><a href="javascript:void(0)">Sarathi Shrestha Awards</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Support &amp; Trust</h5>
+          <ul class="footer-links">
+            <li><a href="tel:1800242728">24/7 Helpline: 1800-242-728</a></li>
+            <li><a href="#safety">SOS Safety Center</a></li>
+            <li><a href="#policies-terms" onclick="App.switchPolicyTab('payment')">100% Direct Payment Policy</a></li>
+            <li><a href="#policies-terms" onclick="App.switchPolicyTab('cancellation')">Cancellation &amp; Refund Terms</a></li>
+            <li><a href="#policies-terms" onclick="App.switchPolicyTab('terms')">Terms &amp; Conditions</a></li>
+            <li><a href="#policies-terms" onclick="App.switchPolicyTab('privacy')">Privacy &amp; Data Policy</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div data-i18n="footer_rights">
+          © 2026 Travel India Mobility Network. Built with pride for Bharat 🇮🇳.
+        </div>
+        <div style="display: flex; gap: 16px;">
+          <span>Zero Commission. 100% Direct.</span>
+          <span>•</span>
+          <span>Community Owned Mobility</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       MODAL 1: MULTI-STEP BOOKING & PAYMENT MODAL
+       ======================================================================== -->
+  <div id="booking-modal" class="modal-overlay">
+    <div class="modal-dialog">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <div class="modal-title">
+          <span>🛺</span>
+          <span>Book Tour Package</span>
+        </div>
+        <button class="btn-close-modal" onclick="App.closeModal('booking-modal')">✕</button>
+      </div>
+
+      <!-- Stepper Indicator -->
+      <div class="stepper-bar">
+        <div id="step-item-1" class="step-item active">
+          <div class="step-num">1</div>
+          <span>Customize</span>
+        </div>
+        <div id="step-item-2" class="step-item">
+          <div class="step-num">2</div>
+          <span>Traveler Details</span>
+        </div>
+        <div id="step-item-3" class="step-item">
+          <div class="step-num">3</div>
+          <span>Direct Payment</span>
+        </div>
+        <div id="step-item-4" class="step-item">
+          <div class="step-num">4</div>
+          <span>Travel Pass</span>
+        </div>
+      </div>
+
+      <!-- Modal Content Body -->
+      <div class="modal-content">
+        <!-- Selected Package Summary Ribbon (Steps 1-3) -->
+        <div id="modal-pkg-summary-card" class="modal-pkg-summary">
+          <img id="modal-summary-img" src="" alt="Package" class="modal-pkg-thumb" />
+          <div class="modal-pkg-info">
+            <h4 id="modal-summary-title">Loading Package...</h4>
+            <p id="modal-summary-meta">📍 Hyderabad • 🛺 Iconic Auto Rickshaw</p>
+          </div>
+          <div class="modal-pkg-fare">
+            <div style="font-size: 0.72rem; color: #64748B; font-weight: 700;">DIRECT FARE</div>
+            <div id="modal-summary-price" class="modal-pkg-price">₹0</div>
+          </div>
+        </div>
+
+        <!-- ==================== STEP 1: CUSTOMIZATION ==================== -->
+        <div id="booking-step-1" class="booking-form-step active">
+          <div class="search-row-2">
+            <div class="search-form-group">
+              <label for="booking-date" class="form-label">Tour Date *</label>
+              <input type="date" id="booking-date" class="form-control" />
+            </div>
+
+            <div class="search-form-group">
+              <label for="booking-time" class="form-label">Pickup Time Slot *</label>
+              <select id="booking-time" class="form-control">
+                <option value="08:30 AM">08:30 AM (Early Sightseeing)</option>
+                <option value="09:30 AM" selected>09:30 AM (Standard Tour)</option>
+                <option value="11:00 AM">11:00 AM (Mid-Morning)</option>
+                <option value="02:00 PM">02:00 PM (Afternoon Trail)</option>
+                <option value="04:30 PM">04:30 PM (Sunset &amp; Evening)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="search-form-group">
+            <label for="booking-pickup" class="form-label">Pickup Address / Hotel / Landmark *</label>
+            <input type="text" id="booking-pickup" class="form-control" placeholder="e.g. Hotel Taj Vivanta, Banjara Hills / Home address" />
+            <div style="font-size: 0.76rem; color: #64748B; margin-top: 6px;">Popular pickup points in this city:</div>
+            <div id="step1-pickup-chips" class="pickup-suggestions">
+              <!-- Dynamically populated chips -->
+            </div>
+          </div>
+
+          <div class="search-row-2">
+            <div class="search-form-group">
+              <label for="booking-guests" class="form-label">Guests Count</label>
+              <select id="booking-guests" class="form-control">
+                <option value="1">1 Traveler (Solo)</option>
+                <option value="2" selected>2 Travelers (Couple / Duo)</option>
+                <option value="3">3 Travelers</option>
+                <option value="4">4 Travelers (Small Group)</option>
+                <option value="5">5 Travelers</option>
+                <option value="6">6+ Travelers (Family / Group)</option>
+              </select>
+            </div>
+
+            <div class="search-form-group">
+              <label for="booking-lang" class="form-label">Driver Language Preference</label>
+              <select id="booking-lang" class="form-control">
+                <option value="English & Hindi">English &amp; Hindi</option>
+                <option value="Regional & English">Regional Local Language &amp; English</option>
+                <option value="Hindi & Regional">Hindi &amp; Regional</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- ==================== STEP 2: TRAVELER DETAILS ==================== -->
+        <div id="booking-step-2" class="booking-form-step">
+          <div class="search-form-group">
+            <label for="booking-name" class="form-label">Lead Traveler Full Name *</label>
+            <input type="text" id="booking-name" class="form-control" placeholder="e.g. Rohan Sharma" />
+          </div>
+
+          <div class="search-row-2">
+            <div class="search-form-group">
+              <label for="booking-phone" class="form-label">Mobile / WhatsApp Number *</label>
+              <input type="tel" id="booking-phone" class="form-control" placeholder="10-digit number for driver calling" maxlength="10" />
+            </div>
+
+            <div class="search-form-group">
+              <label for="booking-email" class="form-label">Email Address (For Pass &amp; Receipt)</label>
+              <input type="email" id="booking-email" class="form-control" placeholder="name@example.com" />
+            </div>
+          </div>
+
+          <div class="search-form-group">
+            <label for="booking-notes" class="form-label">Special Requests / Notes for Sarathi (Optional)</label>
+            <textarea id="booking-notes" class="form-control" rows="2" placeholder="e.g. Travelling with elderly, prefer quiet driving, specific photo stop..."></textarea>
+          </div>
+
+          <div style="background: #F0FDF4; border: 1px solid #BBF7D0; border-radius: 8px; padding: 10px 14px; display: flex; align-items: center; gap: 10px;">
+            <span style="font-size: 1.2rem;">🔒</span>
+            <span style="font-size: 0.8rem; color: #166534;">
+              Your phone number is shared directly with your assigned driver partner for live coordinates. No spam, ever.
+            </span>
+          </div>
+        </div>
+
+        <!-- ==================== STEP 3: DIRECT PAYMENT ==================== -->
+        <div id="booking-step-3" class="booking-form-step">
+          <!-- Payment Method Tabs -->
+          <div class="payment-tabs">
+            <button class="pay-tab-btn active" data-method="upi-qr">
+              <span style="font-size: 1.3rem;">📱</span>
+              <span>Direct UPI QR</span>
+            </button>
+            <button class="pay-tab-btn" data-method="card">
+              <span style="font-size: 1.3rem;">💳</span>
+              <span>Card / NetBanking</span>
+            </button>
+            <button class="pay-tab-btn" data-method="cash">
+              <span style="font-size: 1.3rem;">💵</span>
+              <span>Pay at Pickup</span>
+            </button>
+          </div>
+
+          <!-- Tab View 1: Direct UPI QR (Mana Yatri Signature) -->
+          <div id="pay-view-upi">
+            <div class="upi-direct-container">
+              <div style="font-size: 0.85rem; font-weight: 800; color: #059669; margin-bottom: 8px;">
+                ⚡ 100% DIRECT DRIVER UPI SETTLEMENT
+              </div>
+              <p style="font-size: 0.8rem; color: #64748B; margin-bottom: 12px;">
+                Scan with any UPI App. Zero platform cut. Amount transfers directly to your Sarathi's bank account.
+              </p>
+
+              <!-- Dynamic Simulated QR Code Visual -->
+              <div class="upi-qr-wrapper">
+                <svg class="upi-qr-svg" viewBox="0 0 160 160">
+                  <!-- QR Code Matrix Simulation -->
+                  <rect width="160" height="160" fill="#FFFFFF" />
+                  <!-- Top Left Marker -->
+                  <rect x="15" y="15" width="40" height="40" fill="#0B192C" />
+                  <rect x="23" y="23" width="24" height="24" fill="#FFFFFF" />
+                  <rect x="28" y="28" width="14" height="14" fill="#FB8500" />
+                  <!-- Top Right Marker -->
+                  <rect x="105" y="15" width="40" height="40" fill="#0B192C" />
+                  <rect x="113" y="23" width="24" height="24" fill="#FFFFFF" />
+                  <rect x="118" y="28" width="14" height="14" fill="#FB8500" />
+                  <!-- Bottom Left Marker -->
+                  <rect x="15" y="105" width="40" height="40" fill="#0B192C" />
+                  <rect x="23" y="113" width="24" height="24" fill="#FFFFFF" />
+                  <rect x="28" y="118" width="14" height="14" fill="#FB8500" />
+                  <!-- Data Dots & Alignment -->
+                  <rect x="65" y="20" width="8" height="8" fill="#0B192C" />
+                  <rect x="80" y="20" width="8" height="8" fill="#0B192C" />
+                  <rect x="65" y="35" width="15" height="8" fill="#0B192C" />
+                  <rect x="70" y="55" width="20" height="12" fill="#059669" />
+                  <rect x="20" y="65" width="30" height="8" fill="#0B192C" />
+                  <rect x="20" y="80" width="10" height="10" fill="#0B192C" />
+                  <rect x="40" y="85" width="15" height="8" fill="#0B192C" />
+                  <rect x="65" y="75" width="10" height="20" fill="#0B192C" />
+                  <rect x="85" y="70" width="15" height="15" fill="#0B192C" />
+                  <rect x="110" y="65" width="35" height="8" fill="#0B192C" />
+                  <rect x="115" y="85" width="20" height="10" fill="#0B192C" />
+                  <rect x="65" y="110" width="15" height="15" fill="#0B192C" />
+                  <rect x="90" y="105" width="10" height="25" fill="#0B192C" />
+                  <rect x="110" y="110" width="30" height="8" fill="#0B192C" />
+                  <rect x="125" y="125" width="20" height="20" fill="#0B192C" />
+                  <rect x="70" y="135" width="18" height="10" fill="#0B192C" />
+                  <!-- Center Auto Rickshaw Watermark -->
+                  <circle cx="80" cy="80" r="14" fill="#0B192C" />
+                  <circle cx="80" cy="80" r="11" fill="#FFB703" />
+                  <text x="80" y="84" font-size="10" text-anchor="middle" font-weight="900" fill="#0B192C">₹</text>
+                </svg>
+              </div>
+
+              <div style="font-size: 1.1rem; font-weight: 900; color: #059669; margin-bottom: 8px;">
+                Direct Pay Amount: <span id="qr-amount-display">₹0</span>
+              </div>
+
+              <div>
+                <span style="font-size: 0.88rem; font-weight: 700; color: #0B192C;">UPI ID:</span>
+                <code style="background: #E2E8F0; padding: 3px 8px; border-radius: 4px; font-weight: 700;">travelindia.sarathi@upi</code>
+              </div>
+
+              <!-- Supported UPI Apps -->
+              <div class="upi-apps-row">
+                <span class="upi-app-badge">Google Pay</span>
+                <span class="upi-app-badge">PhonePe</span>
+                <span class="upi-app-badge">Paytm</span>
+                <span class="upi-app-badge">BHIM</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab View 2: Card / NetBanking -->
+          <div id="pay-view-card" style="display: none; padding: 10px 0;">
+            <div class="search-form-group">
+              <label class="form-label">Card Number</label>
+              <input type="text" class="form-control" placeholder="•••• •••• •••• 4242" value="4532 8921 7841 9021" />
+            </div>
+            <div class="search-row-2">
+              <div class="search-form-group">
+                <label class="form-label">Valid Thru</label>
+                <input type="text" class="form-control" placeholder="MM/YY" value="08/28" />
+              </div>
+              <div class="search-form-group">
+                <label class="form-label">CVV</label>
+                <input type="password" class="form-control" placeholder="•••" value="882" maxlength="3" />
+              </div>
+            </div>
+            <div style="font-size: 0.78rem; color: #64748B;">Bank gateway fees: ₹0 (Zero convenience charge on Travel India).</div>
+          </div>
+
+          <!-- Tab View 3: Cash to Driver -->
+          <div id="pay-view-cash" style="display: none; padding: 14px; background: #FEF3C7; border: 1px solid #FCD34D; border-radius: 10px; margin: 10px 0;">
+            <div style="font-weight: 800; color: #92400E; font-size: 0.95rem; margin-bottom: 4px;">
+              💵 Pay Directly to Driver at Pickup
+            </div>
+            <p style="font-size: 0.82rem; color: #78350F;">
+              You can pay cash or scan the driver's physical QR code directly in the vehicle when your tour begins. No advance deposit required.
+            </p>
+          </div>
+
+          <!-- Transparent Breakdown Box -->
+          <div class="fare-breakdown-card">
+            <div class="fare-row">
+              <span>Direct Tour Driver Fare</span>
+              <span id="breakdown-base-fare">₹0</span>
+            </div>
+            <div class="fare-row">
+              <span>Platform Commission (Mana Yatri Model)</span>
+              <span class="zero-fee">₹0 (Zero Commission)</span>
+            </div>
+            <div class="fare-row">
+              <span>Convenience / Booking Surcharge</span>
+              <span class="zero-fee">₹0 (Free)</span>
+            </div>
+            <div class="fare-row">
+              <span>Tolls, Parking &amp; Fuel</span>
+              <span class="zero-fee">Included in Fare</span>
+            </div>
+            <div class="fare-row total-row">
+              <span>Total Payout to Driver:</span>
+              <span id="breakdown-total" style="color: #059669;">₹0</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ==================== STEP 4: DIGITAL TRAVEL PASS ==================== -->
+        <div id="booking-step-4" class="booking-form-step">
+          <div class="booking-pass-card">
+            <div class="pass-header">
+              <div>
+                <span style="font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.08em; opacity: 0.9;">Travel India Official Pass</span>
+                <h3 style="font-size: 1.25rem; font-weight: 900; margin-top: 2px;">Confirmed Booking</h3>
+              </div>
+              <div id="pass-id-display" class="pass-booking-id">TI-HYD-00000</div>
+            </div>
+
+            <div class="pass-body">
+              <!-- Email Notification Banner -->
+              <div id="pass-email-notice"></div>
+
+              <h4 id="pass-pkg-title" style="font-size: 1.15rem; font-weight: 800; color: #0B192C; margin-bottom: 16px;">
+                Package Title
+              </h4>
+
+              <!-- Assigned Sarathi Driver Partner Card -->
+              <div class="pass-assigned-driver">
+                <img id="pass-driver-img" src="" alt="Driver" class="driver-pass-avatar" />
+                <div style="flex: 1;">
+                  <span style="font-size: 0.72rem; font-weight: 800; color: #065F46; text-transform: uppercase;">Your Assigned Chauffeur</span>
+                  <div id="pass-driver-name" style="font-size: 1.1rem; font-weight: 900; color: #064E3B;">Driver Name</div>
+                  <div id="pass-driver-vehicle" style="font-size: 0.82rem; color: #047857; font-weight: 600;">Vehicle details</div>
+                  <div id="pass-driver-rating" style="font-size: 0.76rem; color: #065F46; margin-top: 2px;">⭐ 4.98 (Verified Sarathi)</div>
+                </div>
+                <button class="btn-partner" style="padding: 6px 12px; font-size: 0.8rem;" onclick="App.showToast('📞 Direct call connected to Sarathi driver')">
+                  Call Driver
+                </button>
+              </div>
+
+              <!-- Pass Details Grid -->
+              <div class="pass-grid-details">
+                <div class="pass-detail-box">
+                  <label>Scheduled Date &amp; Time</label>
+                  <span id="pass-date-time">-</span>
+                </div>
+                <div class="pass-detail-box">
+                  <label>Pickup Location</label>
+                  <span id="pass-pickup-loc">-</span>
+                </div>
+                <div class="pass-detail-box">
+                  <label>Lead Passenger</label>
+                  <span id="pass-traveler-name">-</span>
+                </div>
+                <div class="pass-detail-box">
+                  <label>Mobile Number</label>
+                  <span id="pass-traveler-phone">-</span>
+                </div>
+              </div>
+
+              <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px; padding: 10px 14px; display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 0.84rem; color: #64748B;">Settlement Status:</span>
+                <span style="font-weight: 800; color: #059669;">
+                  Direct 100% Payout (<span id="pass-paid-amount">₹0</span>)
+                </span>
+              </div>
+
+              <!-- Actions inside pass -->
+              <div class="pass-actions-row">
+                <button class="btn-print-pass" onclick="App.printPass()">
+                  🖨️ Print / Download Ticket
+                </button>
+                <button class="btn-share-pass" onclick="App.shareWhatsApp()">
+                  💬 Share to WhatsApp
+                </button>
+              </div>
+
+              <div style="text-align: center; margin-top: 14px;">
+                <button class="btn-itinerary" style="width: 100%;" onclick="App.closeModal('booking-modal')">
+                  Done &amp; Return to Home
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal Footer (Stepper Navigation Controls) -->
+      <div id="booking-modal-footer" class="modal-footer">
+        <button id="btn-booking-back" class="btn-modal-back" onclick="App.prevBookingStep()">
+          ← Back
+        </button>
+        <button id="btn-booking-next" class="btn-modal-next" onclick="App.nextBookingStep()">
+          Continue to Step 2 →
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       MODAL 2: ITINERARY DETAILS MODAL
+       ======================================================================== -->
+  <div id="itinerary-modal" class="modal-overlay">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <div class="modal-title">
+          <span>📜</span>
+          <span>Tour Details &amp; Itinerary</span>
+        </div>
+        <button class="btn-close-modal" onclick="App.closeModal('itinerary-modal')">✕</button>
+      </div>
+
+      <div id="itinerary-content" class="modal-content">
+        <!-- Injected via App.openItineraryModal() -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       MODAL 3: OFFICIAL EMAIL TICKET MODAL (DELIVERED TO USER INBOX)
+       ======================================================================== -->
+  <div id="email-modal" class="modal-overlay">
+    <div class="modal-dialog email-modal-dialog">
+      <div class="modal-header">
+        <div class="modal-title">
+          <span>📧</span>
+          <span>Official Tourist E-Ticket (Email Dispatch)</span>
+        </div>
+        <button class="btn-close-modal" onclick="App.closeModal('email-modal')">✕</button>
+      </div>
+
+      <!-- Email Client Simulation Header -->
+      <div class="email-client-header">
+        <div class="email-meta-row">
+          <span class="email-meta-label">From:</span>
+          <span class="email-meta-val">tickets@travelindia.org (Travel India Official Dispatcher)</span>
+        </div>
+        <div class="email-meta-row">
+          <span class="email-meta-label">To:</span>
+          <span id="email-modal-to" class="email-meta-val">traveler@gmail.com</span>
+        </div>
+        <div class="email-meta-row">
+          <span class="email-meta-label">Subject:</span>
+          <span id="email-modal-subject" class="email-meta-val">Confirmed: Your Travel India Tour Ticket &amp; Sarathi Pass</span>
+        </div>
+        <div class="email-meta-row">
+          <span class="email-meta-label">Status:</span>
+          <span class="email-meta-val" style="color: #059669; font-weight: 800;">✓ Delivered to User Inbox</span>
+        </div>
+      </div>
+
+      <!-- Email Content Body -->
+      <div class="email-body-scroll">
+        <div id="email-modal-body">
+          <!-- Injected dynamically by App.dispatchEmailTicket() -->
+        </div>
+      </div>
+
+      <!-- Email Modal Footer Actions -->
+      <div class="modal-footer" style="display: flex; justify-content: space-between; align-items: center;">
+        <button class="btn-itinerary" onclick="App.resendEmailTicket()">
+          🔄 Resend to Email
+        </button>
+        <div style="display: flex; gap: 10px;">
+          <button class="btn-modal-back" onclick="App.printPass()">
+            🖨️ Print / Save Ticket PDF
+          </button>
+          <button class="btn-modal-next" onclick="App.closeModal('email-modal')">
+            Close E-Ticket
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       MY BOOKINGS SLIDE-OUT DRAWER
+       ======================================================================== -->
+  <div id="bookings-drawer" class="drawer-overlay">
+    <div class="drawer-panel">
+      <div class="drawer-header">
+        <div class="drawer-title">
+          🎒 My Confirmed Bookings
+        </div>
+        <button id="btn-close-drawer" class="btn-close-modal">✕</button>
+      </div>
+
+      <div id="my-bookings-list" class="drawer-content">
+        <!-- Rendered by JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       TOAST NOTIFICATION CONTAINER
+       ======================================================================== -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- Scripts -->
+  <script src="js/translations.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
